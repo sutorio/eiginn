@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    // Enable top-level await, and other modern ESM features.
+    "target": "es2022",
+    "module": "es2022",
+    // Enable module resolution without file extensions on relative paths, for things like npm package imports.
+    "moduleResolution": "Bundler",
+    // Force TypeScript to consider all files as modules. This helps to avoid 'cannot redeclare block-scoped variable' errors.
+    "moduleDetection": "force",
+    // Allow importing TypeScript files using their native extension (.ts(x)).
+    "allowImportingTsExtensions": true,
+    // Enable JSON imports.
+    "resolveJsonModule": true,
+    // Enforce the usage of type-only imports when needed, which helps avoiding bundling issues.
+    // NOTE: this makes `isolatedModules` redundant
+    "verbatimModuleSyntax": true,
+    // Properly support importing CJS modules in ESM
+    "esModuleInterop": true,
+    // Skip typechecking libraries and .d.ts files
+    "skipLibCheck": true,
+    // Allow JavaScript files to be imported
+    "allowJs": true,
+    // Force JavaScript files to be typechecked
+    "checkJs": true,
+    // Enables all strict type checking options. 
+    "strict": true,
+    // Prevents you from accessing an array or object without first checking if it's defined: this is *not* in `strict`
+    "noUncheckedIndexedAccess": true,
+    // By default do not emit; almost never want this option set to true, a bundler will handle it.
+    "noEmit": true,
+  },
+}
